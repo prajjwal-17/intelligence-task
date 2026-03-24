@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review Intelligence Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"]
+            },
+            colors: {
+              ink: "#0f172a",
+              success: "#059669",
+              warning: "#d97706",
+              danger: "#dc2626",
+              surface: "#f8fafc"
+            },
+            boxShadow: {
+              soft: "0 18px 50px rgba(15, 23, 42, 0.08)",
+              card: "0 8px 24px rgba(15, 23, 42, 0.06)"
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen bg-slate-100 font-sans text-slate-900">
+    <div class="relative overflow-hidden">
+      <div class="absolute inset-x-0 top-0 h-96 bg-gradient-to-br from-rose-50 via-white to-emerald-50"></div>
+      <div class="absolute right-0 top-8 h-80 w-80 rounded-full bg-rose-200/30 blur-3xl"></div>
+      <div class="absolute left-0 top-16 h-80 w-80 rounded-full bg-emerald-200/30 blur-3xl"></div>
+
+      <main class="relative min-h-screen w-full px-4 py-4 sm:px-6 lg:px-8">
+        <header class="mb-6 rounded-[30px] border border-white/70 bg-white/90 p-6 shadow-soft backdrop-blur sm:p-8">
+          <div class="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
+            <div class="max-w-3xl">
+              <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-white">
+                <span>Review Intelligence Dashboard</span>
+              </div>
+              <h1 class="text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
+                AI-powered insights from customer feedback
+              </h1>
+              <p class="mt-3 max-w-2xl text-base text-slate-600 sm:text-lg">
+                Spot urgent issues, understand business impact, and act before negative sentiment spreads.
+              </p>
+            </div>
+
+            <div class="grid gap-3 md:grid-cols-2 xl:min-w-[480px]">
+              <div class="rounded-[24px] bg-slate-900 px-5 py-4 text-white shadow-card">
+                <p class="text-xs uppercase tracking-[0.2em] text-slate-300">Decision Status</p>
+                <p class="mt-2 text-2xl font-bold">2 critical issues</p>
+                <p class="mt-1 text-sm text-slate-300">Delivery and packaging require immediate intervention</p>
+              </div>
+              <div class="rounded-[24px] bg-emerald-50 px-5 py-4 shadow-card">
+                <p class="text-xs uppercase tracking-[0.2em] text-emerald-700">AI Resolution Rate</p>
+                <p class="mt-2 text-2xl font-bold text-emerald-900">64%</p>
+                <p class="mt-1 text-sm text-emerald-700">Insights already translated into active team actions</p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section class="mb-6 grid gap-4 md:grid-cols-2 2xl:grid-cols-4">
+          <article class="rounded-[24px] border border-slate-200 bg-white p-5 shadow-card transition duration-200 hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium text-slate-500">Total Reviews</p>
+                <p class="mt-3 text-3xl font-extrabold text-ink">12,430</p>
+              </div>
+              <span class="rounded-2xl bg-sky-100 px-3 py-2 text-xl">📝</span>
+            </div>
+            <p class="mt-4 text-sm text-slate-500">30-day review volume across all platforms</p>
+          </article>
+
+          <article class="rounded-[24px] border border-emerald-100 bg-white p-5 shadow-card transition duration-200 hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium text-slate-500">Positive Sentiment</p>
+                <p class="mt-3 text-3xl font-extrabold text-success">78%</p>
+              </div>
+              <span class="rounded-2xl bg-emerald-100 px-3 py-2 text-xl">↑</span>
+            </div>
+            <p class="mt-4 text-sm text-emerald-700"><strong>+6%</strong> after recent support improvements</p>
+          </article>
+
+          <article class="rounded-[24px] border border-rose-200 bg-white p-5 shadow-card transition duration-200 hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium text-slate-500">Negative Sentiment</p>
+                <p class="mt-3 text-3xl font-extrabold text-danger">22%</p>
+              </div>
+              <span class="rounded-2xl bg-rose-100 px-3 py-2 text-xl">↓</span>
+            </div>
+            <p class="mt-4 text-sm text-rose-700"><strong>18%</strong> of complaints tied to delivery delays</p>
+          </article>
+
+          <article class="rounded-[24px] border border-amber-200 bg-white p-5 shadow-card transition duration-200 hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-sm font-medium text-slate-500">Active Alerts</p>
+                <p class="mt-3 text-3xl font-extrabold text-warning">5</p>
+              </div>
+              <span class="rounded-2xl bg-amber-100 px-3 py-2 text-xl">⚠</span>
+            </div>
+            <p class="mt-4 text-sm text-amber-700"><strong>2 critical</strong>, <strong>3 high impact</strong></p>
+          </article>
+        </section>
+
+        <section class="mb-6 grid gap-6 2xl:grid-cols-[1.15fr_0.85fr]">
+          <article class="rounded-[28px] border border-rose-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">AI Insights</p>
+                <h2 class="mt-2 text-2xl font-bold text-ink">What is going wrong right now</h2>
+              </div>
+              <span class="rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700">Needs Immediate Action</span>
+            </div>
+
+            <div class="mt-6 grid gap-4 md:grid-cols-2">
+              <div class="rounded-[24px] border border-rose-200 bg-rose-50 p-5 transition duration-200 hover:scale-[1.02] hover:shadow-card">
+                <div class="flex items-center justify-between gap-3">
+                  <span class="rounded-full bg-rose-600 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-white">Critical</span>
+                  <span class="text-sm font-semibold text-rose-700">High Impact</span>
+                </div>
+                <p class="mt-4 text-lg font-bold text-slate-900">Delivery complaints up <strong>32%</strong></p>
+                <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                  <li>Impacting customer satisfaction on Amazon</li>
+                  <li><strong>18%</strong> of recent orders mention delays</li>
+                </ul>
+              </div>
+
+              <div class="rounded-[24px] border border-rose-200 bg-rose-50 p-5 transition duration-200 hover:scale-[1.02] hover:shadow-card">
+                <div class="flex items-center justify-between gap-3">
+                  <span class="rounded-full bg-rose-600 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-white">Critical</span>
+                  <span class="text-sm font-semibold text-rose-700">Customer Risk</span>
+                </div>
+                <p class="mt-4 text-lg font-bold text-slate-900">Amazon sentiment fell to <strong>65%</strong></p>
+                <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                  <li>Decline linked to packaging damage reviews</li>
+                  <li>One-star reviews rising week over week</li>
+                </ul>
+              </div>
+
+              <div class="rounded-[24px] border border-amber-200 bg-amber-50 p-5 transition duration-200 hover:-translate-y-1 hover:shadow-card">
+                <div class="flex items-center justify-between gap-3">
+                  <span class="rounded-full bg-amber-500 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-white">Warning</span>
+                  <span class="text-sm font-semibold text-amber-700">Trend Watch</span>
+                </div>
+                <p class="mt-4 text-lg font-bold text-slate-900">Packaging issues trending this week</p>
+                <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                  <li><strong>45</strong> mentions clustered around one SKU family</li>
+                  <li>Leakage and broken seal comments increasing</li>
+                </ul>
+              </div>
+
+              <div class="rounded-[24px] border border-emerald-200 bg-emerald-50 p-5 transition duration-200 hover:-translate-y-1 hover:shadow-card">
+                <div class="flex items-center justify-between gap-3">
+                  <span class="rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-white">Positive</span>
+                  <span class="text-sm font-semibold text-emerald-700">Stable Signal</span>
+                </div>
+                <p class="mt-4 text-lg font-bold text-slate-900">Shopify repeat buyers remain strong</p>
+                <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                  <li><strong>84%</strong> positive sentiment on Shopify</li>
+                  <li>Support resolution speed is driving loyalty mentions</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-[28px] border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Action Center</p>
+                <h2 class="mt-2 text-2xl font-bold text-ink">What should I do next</h2>
+              </div>
+              <span class="rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold text-white">Decision Queue</span>
+            </div>
+
+            <div class="mt-6 space-y-4">
+              <div class="rounded-[24px] border border-rose-200 bg-rose-50 p-5 transition duration-200 hover:scale-[1.01] hover:shadow-card">
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <p class="text-lg font-bold text-slate-900">🔴 Delivery delays affecting <strong>18%</strong> of orders</p>
+                    <p class="mt-2 text-sm text-slate-700">Escalate to logistics immediately and review delayed shipment regions.</p>
+                  </div>
+                  <span class="rounded-full bg-rose-600 px-3 py-1 text-xs font-bold text-white">Urgent</span>
+                </div>
+              </div>
+
+              <div class="rounded-[24px] border border-amber-200 bg-amber-50 p-5 transition duration-200 hover:scale-[1.01] hover:shadow-card">
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <p class="text-lg font-bold text-slate-900">⚠ Respond to <strong>50+</strong> negative reviews today</p>
+                    <p class="mt-2 text-sm text-slate-700">Prioritize damaged packaging and delayed delivery complaints first.</p>
+                  </div>
+                  <span class="rounded-full bg-amber-500 px-3 py-1 text-xs font-bold text-white">Today</span>
+                </div>
+              </div>
+
+              <div class="rounded-[24px] border border-slate-200 bg-slate-50 p-5 transition duration-200 hover:scale-[1.01] hover:shadow-card">
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <p class="text-lg font-bold text-slate-900">📦 Packaging defects tied to <strong>1 core SKU cluster</strong></p>
+                    <p class="mt-2 text-sm text-slate-700">Run a packaging quality audit and test more durable inserts this week.</p>
+                  </div>
+                  <span class="rounded-full bg-slate-700 px-3 py-1 text-xs font-bold text-white">Planned</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="mb-6 grid gap-6 xl:grid-cols-[0.85fr_1.15fr]">
+          <article class="rounded-[28px] border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Issue Clusters</p>
+                <h2 class="mt-2 text-2xl font-bold text-ink">Where should I focus</h2>
+              </div>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">Top problem groups</span>
+            </div>
+
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-[22px] border border-rose-200 bg-rose-50 p-4 transition duration-200 hover:-translate-y-1 hover:shadow-card">
+                <p class="text-sm font-semibold text-rose-700">Delivery Issues</p>
+                <p class="mt-2 text-3xl font-extrabold text-danger">120</p>
+                <p class="mt-2 text-sm text-slate-600">Largest complaint cluster</p>
+              </div>
+              <div class="rounded-[22px] border border-amber-200 bg-amber-50 p-4 transition duration-200 hover:-translate-y-1 hover:shadow-card">
+                <p class="text-sm font-semibold text-amber-700">Product Quality</p>
+                <p class="mt-2 text-3xl font-extrabold text-warning">80</p>
+                <p class="mt-2 text-sm text-slate-600">Defects and durability complaints</p>
+              </div>
+              <div class="rounded-[22px] border border-amber-200 bg-amber-50 p-4 transition duration-200 hover:-translate-y-1 hover:shadow-card">
+                <p class="text-sm font-semibold text-amber-700">Packaging</p>
+                <p class="mt-2 text-3xl font-extrabold text-warning">45</p>
+                <p class="mt-2 text-sm text-slate-600">Damage, leakage, broken seals</p>
+              </div>
+              <div class="rounded-[22px] border border-emerald-200 bg-emerald-50 p-4 transition duration-200 hover:-translate-y-1 hover:shadow-card">
+                <p class="text-sm font-semibold text-emerald-700">Customer Support</p>
+                <p class="mt-2 text-3xl font-extrabold text-success">30</p>
+                <p class="mt-2 text-sm text-slate-600">Lower volume, manageable risk</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-[28px] border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Sentiment Trend</p>
+                <h2 class="mt-2 text-2xl font-bold text-ink">Sentiment Trend (Last 30 Days)</h2>
+              </div>
+              <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">Recovery in progress</span>
+            </div>
+
+            <div class="mt-6 rounded-[24px] border border-slate-200 bg-slate-50 p-5">
+              <div class="rounded-[20px] bg-white p-4 shadow-card">
+                <div class="mb-4 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
+                    <span class="text-sm font-medium text-slate-600">Positive sentiment</span>
+                  </div>
+                  <p class="text-sm text-slate-500">Last 30 days</p>
+                </div>
+                <svg viewBox="0 0 760 300" class="h-72 w-full">
+                  <defs>
+                    <linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#34d399" stop-opacity="0.28"></stop>
+                      <stop offset="100%" stop-color="#34d399" stop-opacity="0"></stop>
+                    </linearGradient>
+                  </defs>
+                  <line x1="40" y1="40" x2="40" y2="235" stroke="#cbd5e1" stroke-width="1.5"></line>
+                  <line x1="40" y1="235" x2="720" y2="235" stroke="#cbd5e1" stroke-width="1.5"></line>
+                  <line x1="40" y1="185" x2="720" y2="185" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 6"></line>
+                  <line x1="40" y1="135" x2="720" y2="135" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 6"></line>
+                  <line x1="40" y1="85" x2="720" y2="85" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 6"></line>
+                  <path
+                    d="M40 175 C85 168, 118 158, 150 150 C188 142, 220 145, 255 172 C292 198, 324 205, 356 196 C388 188, 420 165, 458 150 C492 136, 530 120, 572 110 C615 100, 665 84, 720 68 L720 235 L40 235 Z"
+                    fill="url(#trendFill)"
+                  ></path>
+                  <path
+                    d="M40 175 C85 168, 118 158, 150 150 C188 142, 220 145, 255 172 C292 198, 324 205, 356 196 C388 188, 420 165, 458 150 C492 136, 530 120, 572 110 C615 100, 665 84, 720 68"
+                    fill="none"
+                    stroke="#10b981"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                  ></path>
+                  <circle cx="325" cy="205" r="6" fill="#dc2626"></circle>
+                  <circle cx="325" cy="205" r="14" fill="#dc2626" opacity="0.16"></circle>
+                  <circle cx="720" cy="68" r="7" fill="#10b981"></circle>
+                  <rect x="250" y="28" width="140" height="38" rx="19" fill="#fee2e2"></rect>
+                  <text x="268" y="52" fill="#b91c1c" font-size="13" font-weight="700">Spike detected (Day 18)</text>
+                  <rect x="520" y="28" width="160" height="38" rx="19" fill="#dcfce7"></rect>
+                  <text x="536" y="52" fill="#047857" font-size="13" font-weight="700">Recovery trend after fix</text>
+                  <text x="8" y="239" fill="#94a3b8" font-size="12">0%</text>
+                  <text x="8" y="189" fill="#94a3b8" font-size="12">25%</text>
+                  <text x="8" y="139" fill="#94a3b8" font-size="12">50%</text>
+                  <text x="8" y="89" fill="#94a3b8" font-size="12">75%</text>
+                  <text x="40" y="262" fill="#94a3b8" font-size="12">Day 1</text>
+                  <text x="325" y="262" fill="#94a3b8" font-size="12">Day 18</text>
+                  <text x="658" y="262" fill="#94a3b8" font-size="12">Day 30</text>
+                </svg>
+              </div>
+
+              <div class="mt-4 grid gap-3 sm:grid-cols-3">
+                <div class="rounded-[20px] bg-emerald-50 p-4">
+                  <p class="text-xs uppercase tracking-[0.18em] text-emerald-700">Current %</p>
+                  <p class="mt-2 text-2xl font-bold text-emerald-900">78%</p>
+                </div>
+                <div class="rounded-[20px] bg-rose-50 p-4">
+                  <p class="text-xs uppercase tracking-[0.18em] text-rose-700">Lowest Point</p>
+                  <p class="mt-2 text-2xl font-bold text-rose-900">61%</p>
+                </div>
+                <div class="rounded-[20px] bg-slate-100 p-4">
+                  <p class="text-xs uppercase tracking-[0.18em] text-slate-600">Change %</p>
+                  <p class="mt-2 text-2xl font-bold text-slate-900">+17%</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="mb-6 grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
+          <article class="rounded-[28px] border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Platform Performance</p>
+                <h2 class="mt-2 text-2xl font-bold text-ink">Which platforms are under pressure</h2>
+              </div>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">Comparison view</span>
+            </div>
+
+            <div class="mt-6 space-y-4">
+              <div class="flex items-center justify-between rounded-[22px] border border-rose-200 bg-rose-50 px-4 py-4 transition duration-200 hover:-translate-y-1 hover:shadow-card">
+                <div>
+                  <p class="text-base font-bold text-slate-900">Amazon</p>
+                  <p class="mt-1 text-sm text-slate-600"><strong>65%</strong> positive sentiment</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-lg font-bold text-danger">↓ Declining</p>
+                  <p class="text-xs text-rose-700">Driven by delivery and packaging</p>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between rounded-[22px] border border-amber-200 bg-amber-50 px-4 py-4 transition duration-200 hover:-translate-y-1 hover:shadow-card">
+                <div>
+                  <p class="text-base font-bold text-slate-900">Flipkart</p>
+                  <p class="mt-1 text-sm text-slate-600"><strong>72%</strong> positive sentiment</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-lg font-bold text-warning">→ Stable</p>
+                  <p class="text-xs text-amber-700">No major movement this week</p>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between rounded-[22px] border border-emerald-200 bg-emerald-50 px-4 py-4 transition duration-200 hover:-translate-y-1 hover:shadow-card">
+                <div>
+                  <p class="text-base font-bold text-slate-900">Shopify</p>
+                  <p class="mt-1 text-sm text-slate-600"><strong>84%</strong> positive sentiment</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-lg font-bold text-success">↑ Improving</p>
+                  <p class="text-xs text-emerald-700">Support quality lifting repeat purchase confidence</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-[28px] border border-slate-200 bg-slate-900 p-6 text-white shadow-soft">
+            <div class="flex flex-col gap-6 xl:flex-row xl:items-start xl:justify-between">
+              <div class="max-w-xl">
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Business Impact</p>
+                <h2 class="mt-2 text-3xl font-bold">Why this matters</h2>
+                <p class="mt-3 text-sm leading-7 text-slate-300">
+                  Negative review trends are not just sentiment issues. They influence conversion, loyalty, and repeat revenue.
+                </p>
+              </div>
+              <div class="grid gap-3 sm:grid-cols-3 xl:min-w-[500px]">
+                <div class="rounded-[22px] bg-white/10 p-4">
+                  <p class="text-xs uppercase tracking-[0.18em] text-slate-300">Conversion Risk</p>
+                  <p class="mt-2 text-lg font-semibold">Negative reviews may reduce conversion rate</p>
+                </div>
+                <div class="rounded-[22px] bg-white/10 p-4">
+                  <p class="text-xs uppercase tracking-[0.18em] text-slate-300">Retention Risk</p>
+                  <p class="mt-2 text-lg font-semibold">Delivery issues are impacting repeat purchases</p>
+                </div>
+                <div class="rounded-[22px] bg-white/10 p-4">
+                  <p class="text-xs uppercase tracking-[0.18em] text-slate-300">Brand Risk</p>
+                  <p class="mt-2 text-lg font-semibold">Packaging complaints are weakening product trust</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 grid gap-4 lg:grid-cols-3">
+              <div class="rounded-[24px] bg-rose-500/15 p-5 ring-1 ring-rose-300/25">
+                <p class="text-xs uppercase tracking-[0.18em] text-rose-200">Revenue Watch</p>
+                <p class="mt-2 text-xl font-semibold text-white">Protect conversion before ratings slip further</p>
+              </div>
+              <div class="rounded-[24px] bg-amber-500/15 p-5 ring-1 ring-amber-300/25">
+                <p class="text-xs uppercase tracking-[0.18em] text-amber-200">Operational Watch</p>
+                <p class="mt-2 text-xl font-semibold text-white">Fix shipping SLAs to stop recurring complaints</p>
+              </div>
+              <div class="rounded-[24px] bg-emerald-500/15 p-5 ring-1 ring-emerald-300/25">
+                <p class="text-xs uppercase tracking-[0.18em] text-emerald-200">Growth Signal</p>
+                <p class="mt-2 text-xl font-semibold text-white">Use Shopify satisfaction patterns as a playbook</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="grid gap-6 xl:grid-cols-[0.8fr_1.2fr]">
+          <article class="rounded-[28px] border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Critical Reviews Feed</p>
+                <h2 class="mt-2 text-2xl font-bold text-ink">Supporting context</h2>
+              </div>
+              <span class="rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700">Low-rated signals</span>
+            </div>
+
+            <div class="mt-6 space-y-3">
+              <div class="rounded-[22px] border border-slate-200 p-4 transition duration-200 hover:-translate-y-1 hover:shadow-card">
+                <p class="text-sm font-semibold text-slate-900">⭐ Delivery was delayed by 5 days</p>
+                <p class="mt-1 text-sm text-slate-500">Amazon review</p>
+              </div>
+              <div class="rounded-[22px] border border-slate-200 p-4 transition duration-200 hover:-translate-y-1 hover:shadow-card">
+                <p class="text-sm font-semibold text-slate-900">⭐⭐ Product quality is poor</p>
+                <p class="mt-1 text-sm text-slate-500">Stitching failed after first use</p>
+              </div>
+              <div class="rounded-[22px] border border-slate-200 p-4 transition duration-200 hover:-translate-y-1 hover:shadow-card">
+                <p class="text-sm font-semibold text-slate-900">⭐ Packaging was damaged</p>
+                <p class="mt-1 text-sm text-slate-500">Outer box crushed and item leaking</p>
+              </div>
+              <div class="rounded-[22px] border border-slate-200 p-4 transition duration-200 hover:-translate-y-1 hover:shadow-card">
+                <p class="text-sm font-semibold text-slate-900">⭐ Refund support never replied</p>
+                <p class="mt-1 text-sm text-slate-500">Delayed response after defect complaint</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-[28px] border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Executive Snapshot</p>
+                <h2 class="mt-2 text-2xl font-bold text-ink">5-second answer</h2>
+              </div>
+              <span class="rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold text-white">Decision summary</span>
+            </div>
+
+            <div class="mt-6 grid gap-4 lg:grid-cols-3">
+              <div class="rounded-[24px] border border-rose-200 bg-rose-50 p-5">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-rose-700">1. What is going wrong?</p>
+                <p class="mt-3 text-lg font-bold text-slate-900">Delivery and packaging are driving the most negative sentiment.</p>
+              </div>
+              <div class="rounded-[24px] border border-amber-200 bg-amber-50 p-5">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-amber-700">2. What should I do?</p>
+                <p class="mt-3 text-lg font-bold text-slate-900">Escalate logistics now and respond to negative reviews today.</p>
+              </div>
+              <div class="rounded-[24px] border border-emerald-200 bg-emerald-50 p-5">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-700">3. Where should I focus?</p>
+                <p class="mt-3 text-lg font-bold text-slate-900">Amazon delivery issues first, then the packaging SKU cluster.</p>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
